@@ -13,7 +13,7 @@
     <div class="max-w-md">
       <h1 class="mb-5 text-5xl font-bold">Welcome to Your Library Buddy!</h1>
       <p class="mb-5">Let's explore the various book collections in Your Library Buddy and find an enjoyable read for you!.</p>
-      <button class="btn btn-primary" type="submit"><a href="{{route('perpustakaan.index')}}">Get Started</a></button>
+      <button class="btn btn-primary" type="submit"><a href="{{route('user.index')}}">Get Started</a></button>
     </div>
   </div>
 </div>

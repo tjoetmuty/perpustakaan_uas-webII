@@ -45,7 +45,7 @@ class PerpusController extends Controller
     {
         $buku = Buku::findOrFail($id);
 
-        return view('perpustakaan.show', compact('buku'));
+        return view('perpustakaan.detail', compact('buku'));
     }
 
     public function destroy($id): RedirectResponse
@@ -55,5 +55,39 @@ class PerpusController extends Controller
 
         //redirect to index
         return redirect()->route('perpustakaan.index')->with(['success' => 'Your data has been deleted!']);
+    }
+
+    public function edit(string $id): View
+    {
+        $buku = Buku::findOrFail($id);
+
+        return view('perpustakaan.edit', compact('buku'));
+    }
+
+    public function update(Request $request, $id): RedirectResponse
+    {
+       //validate form
+       $request->validate([
+            'judul'         => 'required',
+            'pengarang'     => 'required',
+            'penerbit'      => 'required',
+            'tahun_terbit'  => 'required',
+            'jumlah_stok'   => 'required',
+            'sinopsis'      => 'required'
+       ]);
+
+       $buku = Buku::findOrFail($id);
+
+       $buku->update([
+            'judul'         => $request->judul,
+            'pengarang'     => $request->pengarang,
+            'penerbit'      => $request->penerbit,
+            'tahun_terbit'  => $request->tahun_terbit,
+            'jumlah_stok'   => $request->jumlah_stok,
+            'sinopsis'      => $request->sinopsis,
+       ]);
+
+       //redirect to index
+       return redirect()->route('perpustakaan.index')->with(['success' => 'Your data has been updated!']);
     }
 }

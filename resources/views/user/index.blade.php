@@ -11,7 +11,7 @@
   <div class="hero-content flex-col lg:flex-row-reverse">
     <div class="text-center lg:text-left">
       <h1 class="text-5xl font-bold">Login now!</h1>
-      <p class="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+      <p class="py-6">Hey there! Time to log in and unlock all the awesome stuff on our site. Just enter your details and you're good to go. Let's do this.</p>
     </div>
     <div class="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
     <form  method="post" class="card-body" action="{{route('user.login')}}">
