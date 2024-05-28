@@ -7,8 +7,8 @@
     <title>Detail</title>
 </head>
 <body class="h-screen p-5 flex justify-center items-center" style="background-image: url('{{asset('assets/perpus.jpeg')}}'); background-repeat: no-repeat; background-size: cover; background-attachment: fixed;">
-    <div class="p-5 glass rounded-lg my-5 w-1/2 h-max">
-        <h1 class="text-center text-2xl mt-4 mb-2"><b>DETAIL</b></h1>
+    <div class="p-5 bg-white shadow-2xl rounded-lg my-5 w-1/2 h-max">
+        <h1 class="text-center text-2xl mt-4 mb-2"><b>Detail</b></h1>
         <hr>
         <div class="p-6">
             <table>
