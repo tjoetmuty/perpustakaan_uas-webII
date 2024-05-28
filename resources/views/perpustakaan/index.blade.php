@@ -7,14 +7,24 @@
     <title>Perpustakaan</title>
 </head>
 <body class="bg-red-200">
-    <button class="btn" onclick="my_modal_3.showModal()">+</button>
+<div class="navbar bg-gradient-to-r from-red-400 to-red-300 rounded-xl shadow-lg w-full">
+  <div class="flex-1">
+    <a class="text-xl">Your Library Buddies</a>
+  </div>
+  <div class="flex-none gap-2">
+    <div class="form-control">
+      <input type="text" placeholder="Search" class="input input-bordered w-24 md:w-auto" />
+    </div>
+      <button class="btn" onclick="my_modal_3.showModal()">+</button>
+  </div>
+</div>
 <div class=" grid grid-cols p-4 lg:p-8 gap-4 lg:gap-6 lg:grid-cols-3 ">
     <dialog id="my_modal_3" class="modal">
     <div class="modal-box">
         <form method="POST" action="{{route('perpustakaan.store')}}">
         @csrf
         <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-        <h3 class="font-bold text-lg">Hello!</h3>
+        <h3 class="font-bold text-lg mb-2">Add New Collection!</h3>
                 <div class="mb-4">
                     <label for="judul" class="block text-gray-700 text-sm font-bold mb-2">Title:</label>
                     <input type="text" id="judul" name="judul" class="border border-gray-300 rounded-md py-2 px-3 w-full @error('judul') is-invalid @enderror" value="{{ old('judul') }}">
@@ -102,7 +112,6 @@
                 <a href="{{route('perpustakaan.show', $book -> id)}}" class="btn" type="submit">Detail</a>
             </form>
         </div>
-        
       </div>
     </div>
     @endforeach
