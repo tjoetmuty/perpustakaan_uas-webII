@@ -7,7 +7,7 @@
     <title>Perpustakaan</title>
 </head>
 <body class="bg-red-200">
-<div class="navbar bg-gradient-to-r from-red-400 to-red-300 rounded-xl shadow-lg w-full">
+<div class="navbar bg-gradient-to-r from-red-400 to-red-300 rounded-b-xl shadow-lg w-full">
   <div class="flex-1">
     <a class="text-xl">Your Library Buddies</a>
   </div>
