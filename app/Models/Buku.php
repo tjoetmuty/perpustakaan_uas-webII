@@ -14,6 +14,7 @@ class Buku extends Model
         'pengarang',
         'penerbit',
         'tahun_terbit',
-        'jumlah_stok'
+        'jumlah_stok',
+        'sinopsis'
     ];
 }
