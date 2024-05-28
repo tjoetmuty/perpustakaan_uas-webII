@@ -47,4 +47,13 @@ class PerpusController extends Controller
 
         return view('perpustakaan.show', compact('buku'));
     }
+
+    public function destroy($id): RedirectResponse
+    {
+        $buku = Buku::findOrFail($id);
+        $buku->delete();
+
+        //redirect to index
+        return redirect()->route('perpustakaan.index')->with(['success' => 'Your data has been deleted!']);
+    }
 }

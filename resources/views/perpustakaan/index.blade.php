@@ -6,8 +6,8 @@
     @vite('resources/css/app.css')
     <title>Perpustakaan</title>
 </head>
-<body class="bg-red-200">
-<div class="navbar bg-gradient-to-r from-red-400 to-red-300 rounded-b-xl shadow-lg w-full">
+<body style="background-image: url('{{asset('assets/perpus.jpeg')}}'); background-repeat: no-repeat; background-size: cover; background-attachment: fixed;">
+<div class="navbar bg-white rounded-b-xl shadow-xl w-full">
   <div class="flex-1">
     <a class="text-xl">Your Library Buddies</a>
   </div>
@@ -106,10 +106,15 @@
         <p>{{$book->penerbit}}</p>
         <p>{{$book->tahun_terbit}}</p>
         <p class="bg-gray-400 w-6 h-6 flex justify-center items-center p-4 rounded-lg">{{$book->jumlah_stok}}</p>
-        <div class="card-actions justify-end">
+        <div class="card-actions justify-end flex items-center">
             <button class="btn ">Pinjam</button>
             <form method="get">
                 <a href="{{route('perpustakaan.show', $book -> id)}}" class="btn" type="submit">Detail</a>
+            </form>
+            <form action="{{route('perpustakaan.destroy', $book->id) }}" method="post" onsubmit="return confirm('Are you sure?');">
+                @csrf
+                @method('DELETE')
+                <button type="submit"><img src="{{asset('assets/trash-2.svg')}}" alt="delete"></button>
             </form>
         </div>
       </div>
