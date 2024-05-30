@@ -16,6 +16,7 @@
     <div class="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
     <form action="{{route('register.store')}}" method="post" class="card-body">
       @csrf
+      <input type="hidden" name="role" value="user">
         <div class="form-control">
           <label class="label">
             <span class="label-text">Email</span>

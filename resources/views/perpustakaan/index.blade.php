@@ -12,12 +12,18 @@
     <a class="text-xl font-extrabold">Your Library Buddies</a>
   </div>
   <div class="flex-none gap-2">
-  <button class="btn" onclick="my_modal_2.showModal()">Add Member</button>
-    <div class="form-control">
-      <input type="text" placeholder="Search" class="input input-bordered w-24 md:w-auto" />
+      <button class="btn" onclick="my_modal_2.showModal()">Add Member</button>
+    <form action="{{route('anggota.index')}}" method="GET">
+        <button class="btn" type="submit">List Member</button>
+    </form>
+    <form method="GET" action="{{route('peminjaman.index')}}" method="GET">
+        <button class="btn" type="submit">Borrowed Book</button>
+    </form>
+        <div class="form-control">
+        <input type="text" placeholder="Search" class="input input-bordered w-24 md:w-auto" />
+        </div>
+        <button class="btn" onclick="my_modal_3.showModal()">+</button>
     </div>
-      <button class="btn" onclick="my_modal_3.showModal()">+</button>
-  </div>
 </div>
 <div class=" grid grid-cols p-4 lg:p-8 gap-4 lg:gap-6 lg:grid-cols-3">
     <dialog id="my_modal_3" class="modal">
@@ -179,7 +185,9 @@
         <p><span class="font-bold">Published: </span>{{$book->tahun_terbit}}</p>
         <p class="flex items-center gap-2 font-bold">Stock: <span class="bg-gray-400 w-6 h-6 flex justify-center items-center p-4 rounded-lg">{{$book->jumlah_stok}}</span></p>
         <div class="card-actions justify-end flex items-center">
-            <button class="btn bg-black text-white border-black">Borrow Me!</button>
+            <form method="POST" action="{{route('peminjaman.store', $book->id)}}">
+                <button class="btn bg-black text-white border-black">Borrow Me!</button>
+            </form>
             <a href="{{ route('perpustakaan.edit', $book->id) }}" class="btn">Edit</a>
             <form method="get">
                 <a href="{{route('perpustakaan.show', $book -> id)}}" class="btn" type="submit">Detail</a>

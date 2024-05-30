@@ -13,8 +13,13 @@ return new class extends Migration
     {
         Schema::create('peminjamen', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('id_user')->constrained('users');
             $table->foreignId('id_buku')->constrained('bukus');
+            $table->string('judul');
             $table->foreignId('id_anggota')->constrained('anggotas');
+            $table->string('nama_anggota');
+            $table->string('alamat');
+            $table->integer('no_telp');
             $table->date('tgl_peminjaman');
             $table->date('tgl_kembali');
             $table->string('status');
